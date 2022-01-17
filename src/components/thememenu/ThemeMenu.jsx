@@ -78,20 +78,20 @@ const ThemeMenu = () => {
 
     const closeMenu = () => menu_ref.current.classList.remove('active');
 
-    const [currMode, setcurrMode] = useState('light');
+    const [currMode, setCurrMode] = useState('light');
 
-    const [currColor, setcurrColor] = useState('blue');
+    const [currColor, setCurrColor] = useState('blue');
 
     const dispatch = useDispatch();
 
     const setMode = (mode) => {
-        setcurrMode(mode.id);
+        setCurrMode(mode.id);
         localStorage.setItem('themeMode', mode.class);
         dispatch(ThemeAction.setMode(mode.class));
     };
 
     const setColor = (color) => {
-        setcurrColor(color.id);
+        setCurrColor(color.id);
         localStorage.setItem('colorMode', color.class);
         dispatch(ThemeAction.setColor(color.class));
     };
@@ -109,9 +109,9 @@ const ThemeMenu = () => {
                 localStorage.getItem('colorMode', 'theme-mode-light')
         );
 
-        if (themeClass !== undefined) setcurrMode(themeClass.id);
+        if (themeClass !== undefined) setCurrMode(themeClass.id);
 
-        if (colorClass !== undefined) setcurrColor(colorClass.id);
+        if (colorClass !== undefined) setCurrColor(colorClass.id);
     }, []);
 
     return (
