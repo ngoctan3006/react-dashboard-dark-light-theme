@@ -4,6 +4,7 @@ import './topnav.css';
 import user_image from '../../assets/images/avatar.jpg';
 import notifications from '../../assets/JsonData/notification.json';
 import user_menu from '../../assets/JsonData/user_menus.json';
+import ThemeMenu from '../thememenu/ThemeMenu';
 
 const curr_user = {
     display_name: 'Tân',
@@ -64,7 +65,7 @@ const TopNav = () => {
                     />
                 </div>
                 <div className='topnav__right-item'>
-                    <Dropdown icon='bx bx-' />
+                    <ThemeMenu />
                 </div>
             </div>
         </div>
